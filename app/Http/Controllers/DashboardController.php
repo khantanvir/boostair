@@ -40,41 +40,32 @@ class DashboardController extends Controller{
     public function activate($id=NULL){
         if(empty($id)){
             Session::flash('warning','Role id not found!');
-            return redirect('all-role');
+            return redirect('dashboard/all-role');
         }
         $role = Role::find($id);
         if(empty($role)){
             Session::flash('error','Server Error! Role Data not found!');
-            return redirect('all-role');
+            return redirect('dashboard/all-role');
         }
         $update = Role::where('id',$role->id)->update(['status'=>0]);
         Session::flash('success','Role Data Activate Successfully!');
         Session::flash('role_id',$role->id);
-        return redirect('all-role');
+        return redirect('dashboard/all-role');
     }
     //deactivate
     public function deactivate($id=NULL){
         if(empty($id)){
             Session::flash('warning','Role id not found!');
-            return redirect('all-role');
+            return redirect('dashboard/all-role');
         }
         $role = Role::find($id);
         if(empty($role)){
             Session::flash('error','Server Error! Role Data not found!');
-            return redirect('all-role');
+            return redirect('dashboard/all-role');
         }
         $update = Role::where('id',$role->id)->update(['status'=>1]);
         Session::flash('success','Role Data Deactivate Successfully!');
         Session::flash('role_id',$role->id);
-        return redirect('all-role');
-    }
-    //get role data for ajax tets 
-    public function getRoleData(){
-        $role = Role::all();
-        $data['result'] = array(
-            'key'=>200,
-            'val'=>$role
-        );
-        return response()->json($data, 200);
+        return redirect('dashboard/all-role');
     }
 }

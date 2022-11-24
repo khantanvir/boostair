@@ -291,9 +291,9 @@
 							<span class="nav-text">Users</span>
 						</a>
                         <ul aria-expanded="false" class="{{ (!empty($users) && $users==true)?'mm-collapse mm-show':'' }}">
-                            <li class="{{ (!empty($all_role) && $all_role==true)?'mm-active':'' }}"><a class="{{ (!empty($all_role) && $all_role==true)?'mm-active':'' }}" href="{{ URL::to('all-role') }}">Roles</a></li>
-							<li class="{{ (!empty($all_user) && $all_user==true)?'mm-active':'' }}"><a class="{{ (!empty($all_user) && $all_user==true)?'mm-active':'' }}" href="{{ URL::to('all-user') }}">Users</a></li>
-                            <li class="{{ (!empty($all_admin_user) && $all_admin_user==true)?'mm-active':'' }}"><a class="{{ (!empty($all_admin_user) && $all_admin_user==true)?'mm-active':'' }}" href="{{ URL::to('all-admin-user') }}">Admin Users</a></li>
+                            <li class="{{ (!empty($all_role) && $all_role==true)?'mm-active':'' }}"><a class="{{ (!empty($all_role) && $all_role==true)?'mm-active':'' }}" href="{{ URL::to('dashboard/all-role') }}">Roles</a></li>
+							<li class="{{ (!empty($all_user) && $all_user==true)?'mm-active':'' }}"><a class="{{ (!empty($all_user) && $all_user==true)?'mm-active':'' }}" href="{{ URL::to('dashboard/all-user') }}">Users</a></li>
+                            <li class="{{ (!empty($all_admin_user) && $all_admin_user==true)?'mm-active':'' }}"><a class="{{ (!empty($all_admin_user) && $all_admin_user==true)?'mm-active':'' }}" href="{{ URL::to('dashboard/all-admin-user') }}">Admin Users</a></li>
                         </ul>
                     </li>
                 </ul>
