@@ -23,6 +23,8 @@ class LoginController extends Controller{
         try{
             if (Auth::attempt(['email' => $request->input('email'), 'password' => $request->input('password')])){
                 if(Auth::user()->role->name=='admin'){
+                    return redirect('/dashboard');
+                }elseif(Auth::user()->role->name=='user'){
                     return redirect('/');
                 }else{
                     Auth::logout();
